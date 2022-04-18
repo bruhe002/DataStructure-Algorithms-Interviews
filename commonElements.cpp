@@ -22,7 +22,7 @@ int main()
 	return 0;
 }
 
-
+//BAD WAY O(n^2)
 template <class T>
 bool commonItems(const T arr1[], const T arr2[]) {
 	int sizeB = sizeof(arr2) / sizeof(arr2[0]);

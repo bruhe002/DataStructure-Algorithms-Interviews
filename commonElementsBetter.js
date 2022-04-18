@@ -1,6 +1,6 @@
 
-const array1 = ['a', 'b', 'c', 'x'];
-const array2 = ['z', 'y', 'r'];
+const array1 = ['a', , 'c', 'x'];
+const array2 = ['z', 1, 'r'];
 
 function commonItems2(arr1, arr2) {
 	//loop through first array and create an object where properties === items in the array

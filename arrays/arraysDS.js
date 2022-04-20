@@ -73,3 +73,20 @@ newArr.push('are');
 newArr.push('awesome');
 newArr.delete(1);
 console.log(newArr);
+
+//Create a function that reverses a string
+//
+function reverse(str) {
+	let newStr = '';
+	let last = str.length-1
+
+	while(last >= 0) {
+		newStr = newStr + str[last];
+		last--;
+	}
+
+	return newStr;
+}
+
+let string = "U a little bitch";
+console.log(reverse(string));

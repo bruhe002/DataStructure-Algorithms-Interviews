@@ -77,6 +77,9 @@ console.log(newArr);
 //Create a function that reverses a string
 //
 function reverse(str) {
+	//check input
+	if(!str || str.length < 2 || typeof str !== 'string')
+		return 'hmmm that is not good'
 	let newStr = '';
 	let last = str.length-1
 

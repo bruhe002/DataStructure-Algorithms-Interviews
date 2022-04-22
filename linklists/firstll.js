@@ -1,4 +1,9 @@
-
+class Node {
+	constructor(val) {
+		this.value = val;
+		this.next = null;
+	}
+}
 
 
 class LinkedList {
@@ -23,12 +28,42 @@ class LinkedList {
 
 	//Add to the front of the list
 	prepend(val) {
-		const newNode = {
-			value: val,
-			next: this.head
-		}
+		const newNode = new Node(val);
+		newNode.next = this.head;
 		this.head = newNode;
 		this.length++;
+	}
+
+	printList() {
+		const array = [];
+		let current = this.head;
+		while(current !== null) {
+			array.push(current.value);
+			current = current.next;
+		}
+		console.log(array);
+	}
+	//Insert method
+	insert(idx, val) {
+		if(idx === 0) {
+			this.prepend(val);
+		} else if(idx === this.length - 1) {
+			this.append(val);
+		} else if(idx >= this.length) {
+			console.log("Not a valid index");
+		} else {
+
+			let current = this.head;
+			for(let i = 0; i < idx-1; i++) {
+				current = current.next
+			}
+			const newNode = new Node(val);
+			newNode.next = current.next;
+			current.next = newNode;
+			this.length++;
+		}
+
+		return this.printList();
 	}
 }
 
@@ -44,10 +79,16 @@ myLinkedList.append(16);
 myLinkedList.prepend(1);
 
 console.log(myLinkedList);
-let current = myLinkedList.head;
+myLinkedList.insert(2, 4);
+myLinkedList.insert(0, 0);
+myLinkedList.insert(5, 11);
+//console.log(myLinkedList);
+//let current = myLinkedList.head;
 
+
+//myLinkedLIst.printList();
 //Print all items in the list
-while(current !== null) {
-	console.log(current);
-	current = current.next;
-}
+//while(current !== null) {
+//	console.log(current);
+//	current = current.next;
+//}

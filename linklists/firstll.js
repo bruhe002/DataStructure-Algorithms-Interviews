@@ -65,6 +65,28 @@ class LinkedList {
 
 		return this.printList();
 	}
+
+	//Delete Node
+	remove(idx) {
+		let current = this.head;
+		if(idx === 0) {
+			this.head = this.head.next;
+			//delete current;
+			current = null;
+		} else if(idx >= this.length) {
+			console.log("Not a valid index");
+		} else {
+			for(let i = 0; i < idx - 1; i++) {
+				current = current.next;
+			}
+			let temp = current.next;
+			current.next = temp.next;
+			//delete temp;
+			temp = null;
+
+		}
+		return this.printList();
+	}
 }
 
 
@@ -83,12 +105,12 @@ myLinkedList.insert(2, 4);
 myLinkedList.insert(0, 0);
 myLinkedList.insert(5, 11);
 //console.log(myLinkedList);
-//let current = myLinkedList.head;
+let current = myLinkedList.head;
 
-
+myLinkedList.remove(3);
 //myLinkedLIst.printList();
 //Print all items in the list
-//while(current !== null) {
-//	console.log(current);
-//	current = current.next;
-//}
+while(current !== null) {
+	console.log(current);
+	current = current.next;
+}

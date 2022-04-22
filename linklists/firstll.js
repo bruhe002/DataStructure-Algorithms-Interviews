@@ -70,7 +70,9 @@ class LinkedList {
 	remove(idx) {
 		let current = this.head;
 		if(idx === 0) {
-			this.head = this.head.next;
+			current = this.head.next;
+			this.head.next = null;
+			this.head = current;
 			//delete current;
 			current = null;
 		} else if(idx >= this.length) {
@@ -85,6 +87,7 @@ class LinkedList {
 			temp = null;
 
 		}
+		this.length--;
 		return this.printList();
 	}
 }
@@ -108,6 +111,8 @@ myLinkedList.insert(5, 11);
 let current = myLinkedList.head;
 
 myLinkedList.remove(3);
+myLinkedList.remove(0);
+console.log(myLinkedList);
 //myLinkedLIst.printList();
 //Print all items in the list
 while(current !== null) {

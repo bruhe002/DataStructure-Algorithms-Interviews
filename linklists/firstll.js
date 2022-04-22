@@ -20,6 +20,16 @@ class LinkedList {
 		this.tail = this.tail.next; // set tail to new object
 		this.length++;
 	}
+
+	//Add to the front of the list
+	prepend(val) {
+		const newNode = {
+			value: val,
+			next: this.head
+		}
+		this.head = newNode;
+		this.length++;
+	}
 }
 
 
@@ -29,8 +39,11 @@ console.log(myLinkedList);
 
 myLinkedList.append(5);
 myLinkedList.append(16);
-console.log(myLinkedList);
+//console.log(myLinkedList);
 
+myLinkedList.prepend(1);
+
+console.log(myLinkedList);
 let current = myLinkedList.head;
 
 //Print all items in the list

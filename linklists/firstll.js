@@ -90,6 +90,38 @@ class LinkedList {
 		this.length--;
 		return this.printList();
 	}
+
+	//Creates a copy of the list
+	reverse() {
+		let current = this.head;
+		const ll = new LinkedList(current.value);
+		current = current.next;
+		while(current !== null) {
+			ll.prepend(current.value);
+			current = current.next;
+		}  
+
+		return ll;
+	}
+
+	//Creates a reference of the list
+	reverseV2() {
+		if(!this.head.next) {
+			return this;
+		}
+		let first = this.head;
+		this.tail = this.head;
+		let second = this.head.next
+		while(second) {
+			let temp = second.next;
+			second.next = first;
+			first = second;
+			second = temp;
+		}
+		this.head.next = null;
+		this.head = first;
+		return this;
+	}
 }
 
 
@@ -108,14 +140,22 @@ myLinkedList.insert(2, 4);
 myLinkedList.insert(0, 0);
 myLinkedList.insert(5, 11);
 //console.log(myLinkedList);
-let current = myLinkedList.head;
 
 myLinkedList.remove(3);
 myLinkedList.remove(0);
 console.log(myLinkedList);
-//myLinkedLIst.printList();
-//Print all items in the list
-while(current !== null) {
-	console.log(current);
-	current = current.next;
-}
+
+const newList = myLinkedList.reverseV2();
+myLinkedList.printList();
+newList.printList();
+
+newList.remove(1);
+
+myLinkedList.printList();
+newList.printList();
+
+
+const listA = new LinkedList(1);
+const listB = listA.reverse();
+listA.printList();
+listB.printList();

@@ -28,7 +28,7 @@ class Stack {
 		} else {
 			const temp = this.top;
 			this.top = newNode;
-			this.top.next = newNode;
+			this.top.next = temp;
 		}
 		this.length++;
 		return this;

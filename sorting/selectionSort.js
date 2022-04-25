@@ -1,16 +1,14 @@
 function selectionSort(arr) {
-	let size = arr.length;
+	const size = arr.length;
 	for(let i = 0; i < size; i++) {
-	let lowest = arr[i];
 	let lowIdx = i;
 		for(let j = i + 1; j < size; j++) {
-			if(arr[j] < lowest) {
-				lowest = arr[j];
+			if(arr[j] < arr[lowIdx]) {
 				lowIdx = j;
 			}
 		}
 		let temp = arr[i];
-		arr[i] = lowest;
+		arr[i] = arr[lowIdx];
 		arr[lowIdx] = temp;
 	}
 	return arr;

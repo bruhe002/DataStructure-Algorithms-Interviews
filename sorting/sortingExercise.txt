@@ -1,0 +1,25 @@
+//#1 - Sort 10 schools around your house by distance
+//	insertion sort (small list)
+//
+//#2 - ebay sorts listings by the current bid amount:
+//	radix sort - counting sort (fixed integer space)
+//
+//#3 - Sort Scores on ESPN
+//	Quick Sort (lower space complexity)
+//
+//#4 - massive database
+//	Merge sort (data is big, so we need to worry about performance)
+//
+//#5 - Almost sorted udemy review data need to update and add 2 new reviews
+//	Insertion sort (nearly sorted)
+//
+//#6 - Temperature Records for the past 50 years in Canada
+//	Quick sort (temperature changes over time due to global warming, probably nearly sorted)
+//	(THIS is where you ask for more information, if temperature was in Kelvin, use radix)
+//
+//#7 - Large user name database needs to be sorted
+//	merge sort (worry about performance)
+//
+//#8 - Teaching sorting for the first time
+//	bubble sort
+//	selection sort

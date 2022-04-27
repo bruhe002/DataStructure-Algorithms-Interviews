@@ -53,7 +53,81 @@ class bst {
 		return false;
 	}
 
+	//BREADTH FIRST SEARCH
+	breadthFirstSearch() {
+		let currentNode = this.root;
+		let list = [];
+		let queue = [];
+		queue.push(currentNode);
 
+		while(queue.length > 0) {
+			currentNode = queue.shift(); //Removes element from an array and returns the remove element
+			list.push(currentNode.value);
+			if(currentNode.left) {
+				queue.push(currentNode.left);
+			}
+			if(currentNode.right) {
+				queue.push(currentNode.right);
+			}
+
+		}
+		
+		return list;
+	}
+
+	bfsr(queue, list) {
+		if(!queue.length) {
+			return list;
+		}
+		let currentNode = queue.shift();
+		list.push(currentNode.value);
+		if(currentNode.left) {
+			queue.push(currentNode.left);
+		}
+		if(currentNode.right) {
+			queue.push(currentNode.right);
+		}
+		return this.bfsr(queue, list);
+
+	}
+
+	//DEPTH FIRST SEARCH
+	DFSInorder() {
+		return traverseIO(this.root);	
+	}
+
+	DFSPostorder() {
+		return traversePO(this.root);
+	}
+
+	DFSPreorder() {
+		return traversePre(this.root);
+	}
+
+}
+
+function traverseIO(node) {
+	if(node) {
+		traverseIO(node.left);
+		console.log(node.value);
+		traverseIO(node.right);
+	}
+}
+
+function traversePO(node) {
+	if(node) {
+		traversePO(node.left);
+		traversePO(node.right);
+		console.log(node.value);
+	}
+}
+
+function traversePre(node) {
+	if(node) {
+		console.log(node.value);
+		traverseIO(node.left);
+		traverseIO(node.right);
+	}
 }
 
 const tree = new bst();
@@ -69,15 +143,15 @@ console.log(tree.lookup(14));
 console.log(tree.lookup(20));
 console.log(tree.lookup(10));
 console.log(tree.lookup(170));
-preOrderPrint(tree.root);
+console.log(tree.breadthFirstSearch());
+console.log(tree.bfsr([tree.root], []));
+tree.DFSInorder();
+console.log("--------");
+tree.DFSPostorder();
+console.log("--------");	
+tree.DFSPreorder();
 
-function preOrderPrint(node) {
-	if(node !== null) {
-		console.log(node.value);
-		preOrderPrint(node.left);
-		preOrderPrint(node.right);
-	}
-}
+
 
 function traverse(node) {
 	const tree = { value: node.value };
@@ -85,3 +159,4 @@ function traverse(node) {
 	tree.right = node.right === null ? null : traverse(node.right);
 	return tree;
 }
+

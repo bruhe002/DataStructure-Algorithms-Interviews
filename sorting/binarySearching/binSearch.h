@@ -3,4 +3,4 @@
 
 int binarySearch(const int arr[], int, int, int);
 
-#define
+#endif

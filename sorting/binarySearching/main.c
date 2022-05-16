@@ -12,7 +12,7 @@ int main()
 {
 	//Create the Array
 	srand(time(0));
-	int arr[ARR_SIZE];
+	int arr[ARR_SIZE] = {0};
 
 	int numOfElements = 0;
 	for(int i = 0; i < ARR_SIZE; i++)
@@ -23,6 +23,8 @@ int main()
 			arr[i] = randNum;
 			numOfElements++;
 		}
+		else
+			i--;
 	}
 
 	//Sort the array
@@ -34,8 +36,8 @@ int main()
 	//Ask for number
 	int num;
 	printf("Search for a number\n");
-	scanf("%d\n", num);
+	scanf("%d", &num);
 
 	//Print the index
-	printf("%d\n", binarySearch(arr, 0, ARR_SIZE - 1, num);
+	printf("%d\n", binarySearch(arr, 0, ARR_SIZE - 1, num));
 }

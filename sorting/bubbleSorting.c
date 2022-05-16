@@ -12,9 +12,9 @@ int main()
 	// Ascending Order
 	//int size = sizeof(arr) / sizeof(arr[0]);
 
-	for(int i = 0; i < ARR_SIZE; i++) 
+	for(int i = 0; i < ARR_SIZE - 1; i++) 
 	{
-		for(int j = 0; j < ARR_SIZE - 1; j++)
+		for(int j = 0; j < ARR_SIZE - i - 1; j++)
 		{
 			if(arr[j] < arr[j + 1]) 
 			{

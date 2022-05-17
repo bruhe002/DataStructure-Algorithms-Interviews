@@ -15,7 +15,7 @@ int binarySearch(const int arr[], int start, int end, int element)
 
 int binarySearchNonRecursion(const int arr[], int start, int end, int element)
 {
-	while(end > start)
+	while(end >= start)
 	{
 		int mid = (end + start) / 2;
 

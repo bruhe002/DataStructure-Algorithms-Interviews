@@ -39,5 +39,5 @@ int main()
 	scanf("%d", &num);
 
 	//Print the index
-	printf("%d\n", binarySearch(arr, 0, ARR_SIZE - 1, num));
+	printf("%d\n", binarySearchNonRecursion(arr, 0, ARR_SIZE - 1, num));
 }
